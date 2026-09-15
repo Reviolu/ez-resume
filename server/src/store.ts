@@ -1,6 +1,6 @@
-import { Ruberic } from './types';
+import { Rubric } from './types';
 
-const ruberics : Ruberic[] = [
+const rubrics : Rubric[] = [
     {
         id: 'swe',
         field: 'Software Engineering',
@@ -56,3 +56,16 @@ const ruberics : Ruberic[] = [
         ],
     },
 ];
+
+export function listRubrics(): Rubric[] {
+  return rubrics;
+}
+
+export function getRubric(id: string): Rubric | undefined {
+  return rubrics.find((r) => r.id === id);
+}
+
+export function addRubric(rubric: Rubric): Rubric {
+  rubrics.push(rubric);
+  return rubric;
+}

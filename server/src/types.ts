@@ -7,7 +7,7 @@ export interface Criterion {
     minHits: number;
 }
 
-export interface Ruberic {
+export interface Rubric {
     id: string;
     field: string;
     author: string;
@@ -24,9 +24,10 @@ export interface CriterionResult {
 }
 
 export interface Review {
-    rubericId: string;
+    rubricId: string;
     field: string;
     score: number;
     wordCount: number;
     results: CriterionResult[];
+    structural: CriterionResult[];
 }
