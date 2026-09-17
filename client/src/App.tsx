@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
+import ReviewPanel from "./components/ReviewPanel";
 
 export default function App() {
-  const [message, setMessage] = useState("loading…");
 
-  useEffect(() => {
-    fetch("http://localhost:3000/api/ping")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch(() => setMessage("could not reach the server"));
-  }, []);
-
-  return <h1>{message}</h1>;
+  return (
+    <div>
+      <h1>Resume Review</h1>
+      <ReviewPanel />
+    </div>
+  );
 }

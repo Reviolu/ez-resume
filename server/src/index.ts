@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/api/rubric", (_req, res) => {
+app.get("/api/rubrics", (_req, res) => {
     res.json(listRubrics().map((r) => ({ id: r.id, field: r.field, author: r.author , criteriaCount: r.criteria.length ,})),
     );
 });
